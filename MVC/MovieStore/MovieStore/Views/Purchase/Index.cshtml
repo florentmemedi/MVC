@@ -1,0 +1,18 @@
+﻿@model List<MovieModel>
+@{
+    ViewData["Title"] = "Menu";
+}
+
+<h2>Index</h2>
+<div class="btn">@Html.ActionLink("Add new movie", "Add")</div>
+<div class="body-content">
+    @foreach (var movie in Model)
+    {
+        <div class="form-control">
+            Name: @movie.Title 
+            | @Html.ActionLink("details", "MovieDetails", new { id = movie.Id })
+            | @Html.ActionLink("edit", "Edit", new { id = movie.Id })
+            | @Html.ActionLink("delete", "Delete", new { id = movie.Id })
+        </div><br />
+    }
+</div>

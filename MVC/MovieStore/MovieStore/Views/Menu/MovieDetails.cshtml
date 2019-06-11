@@ -1,0 +1,17 @@
+﻿@model MovieModel
+@{
+    ViewData["Title"] = "Movie Details";
+}
+
+<h2>MovieDetails</h2>
+<h3>@Html.ActionLink("Back", "Index")</h3><br />
+<div class="body-content">
+    <div>
+        <div class="form-control-static">ID: <strong>@Model.Id</strong></div>
+        <div class="form-control-static">Name: <strong>@Model.Title</strong></div>
+        <div class="form-control-static">Description: <strong>@Model.Genre</strong></div>
+        <div class="form-control-static">Size: <strong>@Model.Information</strong></div>
+        <div class="form-control-static">Price: <strong>@Model.Price</strong></div>
+    </div>
+</div>
+
