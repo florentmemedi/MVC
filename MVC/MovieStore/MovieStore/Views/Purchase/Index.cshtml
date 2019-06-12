@@ -9,7 +9,7 @@
     @foreach (var movie in Model)
     {
         <div class="form-control">
-            Name: @movie.Title 
+            Name: @movie.PurchaseName 
             | @Html.ActionLink("details", "MovieDetails", new { id = movie.Id })
             | @Html.ActionLink("edit", "Edit", new { id = movie.Id })
             | @Html.ActionLink("delete", "Delete", new { id = movie.Id })
