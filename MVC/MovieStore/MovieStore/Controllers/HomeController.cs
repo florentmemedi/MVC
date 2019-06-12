@@ -35,33 +35,5 @@ namespace MovieStore.Controllers
         {
             return View();
         }
-
-        public IActionResult Download()
-        {
-            string path = Path.Combine("`/Images/");
-            DirectoryInfo dirInfo = new DirectoryInfo(path);
-            FileInfo[] files = dirInfo.GetFiles("*.*");
-            List<string> first = new List<string>(files.Length);
-            foreach (var item in files)
-            {
-                first.Add(item.Name);
-            }
-            return View(first);
-        }
-
-        public IActionResult DownloadFile(string filename)
-        {
-            if (Path.GetExtension (filename) == ".jpg")
-            {
-                string fullPath = Path.Combine("`/Images/", filename);
-                return File(fullPath, "Images/movie1.jpg");
-            }
-            return null;
-        }
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
 }
